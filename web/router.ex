@@ -16,11 +16,7 @@ defmodule FourElixir.Router do
   scope "/", FourElixir do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", ProblemController, :index
+    resources("problems", ProblemController)
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", FourElixir do
-  #   pipe_through :api
-  # end
 end

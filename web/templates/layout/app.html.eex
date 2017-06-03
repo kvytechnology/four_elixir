@@ -12,9 +12,12 @@
   </head>
 
   <body>
-    <div class="container">
+    <div>
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <div class="app">
+      </div>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
@@ -22,5 +25,6 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
   </body>
 </html>

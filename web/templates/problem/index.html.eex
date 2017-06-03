@@ -1,0 +1,28 @@
+<h2>Listing problems</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for problem <- @problems do %>
+    <tr>
+      <td><%= problem.name %></td>
+      <td><%= problem.body %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: problem_path(@conn, :show, problem), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: problem_path(@conn, :edit, problem), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: problem_path(@conn, :delete, problem), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New problem", to: problem_path(@conn, :new) %>

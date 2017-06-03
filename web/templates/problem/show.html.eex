@@ -1,0 +1,18 @@
+<h2>Show problem</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @problem.name %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @problem.body %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: problem_path(@conn, :edit, @problem) %>
+<%= link "Back", to: problem_path(@conn, :index) %>
